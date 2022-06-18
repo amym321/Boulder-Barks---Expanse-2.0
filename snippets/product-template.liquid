@@ -79,7 +79,11 @@
       </h1>
     {%- endif -%}
 
-    {%- if settings.vendor_enable or sku_enable -%}
+    
+{% comment %}Start automatically added Judge.me widget{% endcomment %}
+  {% render 'judgeme_widgets', widget_type: 'judgeme_preview_badge', concierge_install: true, product: product %}
+{% comment %}End automatically added Judge.me widget{% endcomment %}
+{%- if settings.vendor_enable or sku_enable -%}
       <div class="product-single__vendor-sku">
         {%- if settings.vendor_enable -%}
           <span class="product-single__vendor">
@@ -432,6 +436,12 @@
           </div>
         {%- endunless -%}
       </div>
-    </div>
+    
+{% comment %}Start automatically added Judge.me widget{% endcomment %}
+  <div class="page-width">
+    {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: true, product: product %}
+  </div>
+{% comment %}End automatically added Judge.me widget{% endcomment %}
+</div>
   </div>
 </div>
